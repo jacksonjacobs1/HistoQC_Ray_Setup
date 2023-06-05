@@ -20,8 +20,7 @@ provider "docker" {
 resource "docker_container" "ray" {
   image   = "jackson/rayexperimental:histoqc"
   name    = "child"
-  command = ["/bin/bash", "/home/ray/startup_child.sh"]
-  # command = ["tail", "-f", "/dev/null"]
+  command = ["/bin/bash", "/home/ray/startup_child.sh", "172.17.0.2:6379"]
   ports {
     internal = 80
     external = 8080
