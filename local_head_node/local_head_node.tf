@@ -19,7 +19,7 @@ provider "docker" {
 
 resource "docker_container" "ray" {
   image   = "jackson/rayexperimental:histoqc"
-  name    = "tutorial"
+  name    = "head_node"
   command = ["/bin/bash", "/home/ray/HistoQC/docker_img_files/startup_head.sh"]
   ports {
     internal = 80

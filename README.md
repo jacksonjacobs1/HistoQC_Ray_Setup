@@ -32,13 +32,33 @@ sudo terraform apply
 
 These scripts will perform the following tasks:
 - Create a docker volume
-- Create a head docker container 
+- Create a head_node docker container 
+- Create a child_node docker container
+- Initialize respective ray head and child nodes, connected by a Ray cluster.
 
-5. Run HistoQC
+6. Add images to the shared docker volume. The shared volume is mounted to the head node and child node containers. Images added to the shared volume will be accessible to both containers.
+
+The shared volume should have the following file structure:
+```
+shared_volume
+|_ raw
+|_ runs
+```
+
+Images should be stored in shared_volume/raw
+
+7. Run HistoQC
+Connect to the head node container
+```bash
+docker exec -it head_node bash
+```
+
+In the container terminal, run HistoQC
+```bash
+python -m histoqc -c light -n 2 -o /home/ray/shared_volume/runs/ray_test1 /home/ray/shared_volume/raw/*.tif
+```
 
 
 ## Troubleshooting
 todo - info about docker container ip addresses
-
-
 
