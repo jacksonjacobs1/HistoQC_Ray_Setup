@@ -48,6 +48,7 @@ shared_volume
 Images should be stored in shared_volume/raw
 
 7. Run HistoQC
+
 Connect to the head node container
 ```bash
 docker exec -it head_node bash
