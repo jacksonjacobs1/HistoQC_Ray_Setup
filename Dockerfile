@@ -12,5 +12,3 @@ RUN apt-get install python3-openslide
 RUN apt-get install openslide-tools
 RUN pip install openslide-python
 
-CMD python -m histoqc -c light -n 2 -o /home/ray/ray_test1 /home/ray/*.tif
-

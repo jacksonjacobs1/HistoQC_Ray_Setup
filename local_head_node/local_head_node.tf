@@ -18,7 +18,7 @@ provider "docker" {
 # }
 
 resource "docker_container" "ray" {
-  image   = "jackson/rayexperimental:histoqc"
+  image   = "cluster_boilerplate"
   name    = "head_node"
   command = ["/bin/bash", "/home/ray/HistoQC/docker_img_files/startup_head.sh"]
   ports {

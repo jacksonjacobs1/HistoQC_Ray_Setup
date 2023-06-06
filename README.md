@@ -61,5 +61,4 @@ python -m histoqc -c light -n 2 -o /home/ray/shared_volume/runs/ray_test1 /home/
 
 
 ## Troubleshooting
-todo - info about docker container ip addresses
-
+If the child node is not automatically connecting to the ray cluster, check the head container's ip address. You may have to change the ip address in the child node's terraform script: https://github.com/jacksonjacobs1/HistoQC_Ray_Setup/blob/b9a0c764fbe532944a4e70afdef6ab4a192e4bd0/local_child_node/local_child_node.tf#L23
